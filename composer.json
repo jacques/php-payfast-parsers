@@ -9,7 +9,7 @@
     },
     "require": {
         "league/csv": "^8.2",
-        "moneyphp/money": "^3.0"
+        "moneyphp/money": "^3.1"
     },
     "require-dev": {
         "codeclimate/php-test-reporter": "^0.4.4",
