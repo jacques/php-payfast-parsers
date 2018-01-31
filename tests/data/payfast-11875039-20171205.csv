@@ -1,0 +1,3 @@
+"Date","Type","Sign","Party","Name","Description","Currency","Funding Type","Gross","Fee","Net","Balance","M Payment ID","PF Payment ID"
+"2017-12-04 15:58:02","TOPUP","CREDIT","My Bank Account","Account topup from FNB","","ZAR","INSTANT_EFT","1,140.00","0.00","1,140.00","1,140.00","",""
+"2017-12-04 16:23:57","FUNDS_SENT","DEBIT","Othos Telecommunications","R1000 Othos Credit","R1000 of Othos Credit","ZAR","DIRECT_EFT","-1,140.00","0.00","-1,140.00","0.00","O4665","10330759"

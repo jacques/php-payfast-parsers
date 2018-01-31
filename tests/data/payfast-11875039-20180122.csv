@@ -1,0 +1,3 @@
+"Date","Type","Sign","Party","Name","Description","Currency","Funding Type","Gross","Fee","Net","Balance","M Payment ID","PF Payment ID","Custom_int1","Custom_str1","Custom_int2","Custom_str2","Custom_int3","Custom_str3","Custom_int4","Custom_str4","Custom_int5","Custom_str5"
+"2018-01-21 21:57:31","FUNDS_RECEIVED","CREDIT","Kenneth Finneran","BongoTel - R 10","","ZAR","CC","10.00","-2.68","7.32","14.64","6c4413b3-06d9-419a-8ee3-0e08f54518f8","10873033","","","","","","","","","",""
+"2018-01-21 22:01:54","FUNDS_RECEIVED","CREDIT","Kenneth Finneran","Vodacom - 15MB Data Bundle - R 9","","ZAR","CC","9.00","-2.64","6.36","21.00","d4cc3fc5-9d95-4d8e-a7a9-09d7e9cf23c4","10873065","","","","","","","","","",""
