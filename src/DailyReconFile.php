@@ -9,7 +9,6 @@
 
 namespace Jacques\PayFast\Parsers;
 
-use Carbon\Carbon;
 use League\Csv\Reader;
 
 class DailyReconFile
@@ -81,7 +80,7 @@ class DailyReconFile
         $csv = Reader::createFromPath($this->filename, 'r');
 
         $headers = $csv->fetchOne();
-        /**
+        /*
          * PayFast send two different formatted files depending if we have received
          * any payments.
          */
@@ -126,6 +125,6 @@ class DailyReconFile
             $rows[] = $row;
         }
 
-        return ($rows);
+        return $rows;
     }
 }
