@@ -1,15 +1,15 @@
-<?php
+<?php declare(strict_types=1);
 /**
  * Parse the CSV file PatFast emails daily for the Settlement Information.
  *
  * @author    Jacques Marnweeck <jacques@siberia.co.za>
- * @copyright 2018 Jacques Marneweck.  All rights strictly reserved.
+ * @copyright 2018-2020 Jacques Marneweck.  All rights strictly reserved.
  * @license   MPLv2
  */
 
 namespace Jacques\PayFast\Parsers\Tests\Unit;
 
-class DailyReconFileTest extends \PHPUnit_Framework_TestCase
+class DailyReconFileTest extends \PHPUnit\Framework\TestCase
 {
     protected $keys = [
         'date',
@@ -42,7 +42,7 @@ class DailyReconFileTest extends \PHPUnit_Framework_TestCase
      * Sets up the fixture, for example, opens a network connection.
      * This method is called before a test is executed.
      */
-    protected function setUp()
+    protected function setUp(): void
     {
     }
 
@@ -50,21 +50,21 @@ class DailyReconFileTest extends \PHPUnit_Framework_TestCase
      * Tears down the fixture, for example, closes a network connection.
      * This method is called after a test is executed.
      */
-    protected function tearDown()
+    protected function tearDown(): void
     {
     }
 
-    public function testOthosPaymentForAirtime()
+    public function testOthosPaymentForAirtime(): void
     {
         $parser = new \Jacques\PayFast\Parsers\DailyReconFile(__DIR__.'/../data/payfast-11875039-20170805.csv');
         $results = $parser->parse();
 
-        self::assertInternalType('array', $results);
+        self::assertIsArray($results);
         self::assertCount(2, $results);
 
         for ($i = 0; $i < 2; $i++) {
             foreach ($this->keys as $key) {
-                self::assertInternalType('array', $results[$i]);
+                self::assertIsArray($results[$i]);
                 self::assertCount(24, $results[$i]);
                 self::assertArrayHasKey($key, $results[$i]);
             }

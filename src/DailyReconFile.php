@@ -3,7 +3,7 @@
  * Parse the CSV file PatFast emails daily for the Settlement Information.
  *
  * @author    Jacques Marnweeck <jacques@siberia.co.za>
- * @copyright 2018 Jacques Marneweck.  All rights strictly reserved.
+ * @copyright 2018-2020 Jacques Marneweck.  All rights strictly reserved.
  * @license   MPLv2
  */
 
@@ -79,7 +79,8 @@ class DailyReconFile
     {
         $csv = Reader::createFromPath($this->filename, 'r');
 
-        $headers = $csv->fetchOne();
+        $csv->setHeaderOffset(0);
+        $headers = $csv->getHeader();
         /*
          * PayFast send two different formatted files depending if we have received
          * any payments.
@@ -93,7 +94,7 @@ class DailyReconFile
             );
         }
 
-        $results = $csv->setOffset(1)->fetchAssoc([
+        $results = $csv->getRecords([
             'date',
             'type',
             'sign',

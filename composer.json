@@ -8,12 +8,13 @@
         "sort-packages": true
     },
     "require": {
-        "league/csv": "^8.2",
         "moneyphp/money": "^3.1"
     },
     "require-dev": {
         "codeclimate/php-test-reporter": "^0.4.4",
-        "phpunit/phpunit": "^5.7"
+        "league/csv": "^9.5",
+        "phpunit/php-invoker": "^3.0",
+        "phpunit/phpunit": "^8.5"
     },
     "autoload": {
         "psr-4": {
