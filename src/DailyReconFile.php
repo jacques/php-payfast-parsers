@@ -9,7 +9,10 @@
 
 namespace Jacques\PayFast\Parsers;
 
+use Exception;
+use InvalidArgumentException;
 use League\Csv\Reader;
+use RuntimeException;
 
 class DailyReconFile
 {
@@ -65,11 +68,11 @@ class DailyReconFile
     public function __construct($filename)
     {
         if (is_null($filename)) {
-            throw new \InvalidArgumentException('Please pass in the filename of the file to parse.');
+            throw new InvalidArgumentException('Please pass in the filename of the file to parse.');
         }
 
         if (!file_exists($filename)) {
-            throw new \RuntimeException('Please ensure the file exists.');
+            throw new RuntimeException('Please ensure the file exists.');
         }
 
         $this->filename = $filename;
@@ -89,7 +92,7 @@ class DailyReconFile
             $headers != $this->expectedHeaders &&
             $headers != $this->expectedHeadersReceipts
         ) {
-            throw new \Exception(
+            throw new Exception(
                 'Please check the file is a PayFast Daily Reconciliation file.'
             );
         }
