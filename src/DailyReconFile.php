@@ -88,8 +88,7 @@ class DailyReconFile
          * PayFast send two different formatted files depending if we have received
          * any payments.
          */
-        if (
-            $headers != $this->expectedHeaders &&
+        if ($headers != $this->expectedHeaders &&
             $headers != $this->expectedHeadersReceipts
         ) {
             throw new Exception(
