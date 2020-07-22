@@ -16,9 +16,9 @@ use RuntimeException;
 
 class DailyReconFile
 {
-    protected $filename = null;
+    protected ?string $filename = null;
 
-    protected $expectedHeaders = [
+    protected array $expectedHeaders = [
         'Date',
         'Type',
         'Sign',
@@ -35,7 +35,7 @@ class DailyReconFile
         'PF Payment ID',
     ];
 
-    protected $expectedHeadersReceipts = [
+    protected array $expectedHeadersReceipts = [
         'Date',
         'Type',
         'Sign',
@@ -67,11 +67,11 @@ class DailyReconFile
      */
     public function __construct($filename)
     {
-        if (is_null($filename)) {
+        if (\is_null($filename)) {
             throw new InvalidArgumentException('Please pass in the filename of the file to parse.');
         }
 
-        if (!file_exists($filename)) {
+        if (!\file_exists($filename)) {
             throw new RuntimeException('Please ensure the file exists.');
         }
 
@@ -83,6 +83,7 @@ class DailyReconFile
         $csv = Reader::createFromPath($this->filename, 'r');
 
         $csv->setHeaderOffset(0);
+
         $headers = $csv->getHeader();
         /*
          * PayFast send two different formatted files depending if we have received

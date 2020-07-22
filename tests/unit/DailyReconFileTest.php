@@ -11,7 +11,7 @@ namespace Jacques\PayFast\Parsers\Tests\Unit;
 
 class DailyReconFileTest extends \PHPUnit\Framework\TestCase
 {
-    protected $keys = [
+    protected array $keys = [
         'date',
         'type',
         'sign',
